@@ -668,6 +668,25 @@ struct internal_reloc
   unsigned long r_offset;	/* Used by Alpha ECOFF, SPARC, others */
 };
 
+/* AARCH64 relocations.  */
+#define R_AARCH64_ABS    0
+#define R_AARCH64_DIR32  1
+#define R_AARCH64_DIR32NB   2
+#define R_AARCH64_BRANCH26  3
+#define R_AARCH64_PAGEBASE  4
+#define R_AARCH64_REL21     5
+#define R_AARCH64_PGREL_12A 6
+#define R_AARCH64_PGREL_12L 7
+#define R_AARCH64_SECREL    8
+#define R_AARCH64_SECREL_L12A 9
+#define R_AARCH64_SECREL_H12A 10
+#define R_AARCH64_SECREL_L12L 11
+#define R_AARCH64_TOKEN       12
+#define R_AARCH64_SECTION     13
+#define R_AARCH64_DIR64       14
+#define R_AARCH64_BRANCH19    15
+#define R_AARCH64_BRANCH14    16
+
 /* X86-64 relocations.  */
 #define R_AMD64_ABS 		 0 /* Reference is absolute, no relocation is necessary.  */
 #define R_AMD64_DIR64		 1 /* 64-bit address (VA).  */

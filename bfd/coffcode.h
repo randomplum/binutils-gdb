@@ -2195,6 +2195,16 @@ coff_set_arch_mach_hook (bfd *abfd, void * filehdr)
 	}
       break;
 #endif
+#ifdef AARCH64MAGIC
+    case AARCH64MAGIC:
+    case AARCH64_APPLE_MAGIC:
+    case AARCH64_FREEBSD_MAGIC:
+    case AARCH64_LINUX_MAGIC:
+    case AARCH64_NETBSD_MAGIC:
+      arch = bfd_arch_aarch64;
+      machine = bfd_mach_aarch64;
+      break;
+#endif
 #ifdef Z80MAGIC
     case Z80MAGIC:
       arch = bfd_arch_z80;
@@ -2787,6 +2797,12 @@ coff_set_flags (bfd * abfd,
 	case bfd_mach_arm_5TE: * flagsp |= F_ARM_5; break;
 	case bfd_mach_arm_XScale: * flagsp |= F_ARM_5; break;
 	}
+      return TRUE;
+#endif
+
+#ifdef AARCH64MAGIC
+    case bfd_arch_aarch64:
+      *magicp = AARCH64MAGIC;
       return TRUE;
 #endif
 

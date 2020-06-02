@@ -705,6 +705,12 @@ case "${targ}" in
     want64=true
     targ_underscore=no
     ;;
+  aarch64-*-mingw*)
+    targ_defvec=aarch64_pe_vec
+    targ_selvecs="aarch64_pe_vec aarch64_pei_vec aarch64_elf64_le_vec"
+    want64=true
+    targ_underscore=no
+    ;;
   x86_64-*-rdos*)
     targ_defvec=x86_64_elf64_vec
     want64=true
